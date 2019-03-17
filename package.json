@@ -1,6 +1,6 @@
 {
     "name": "typed-math",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Easy to use typescript math library",
     "main": "./dist/main.js",
     "files": [
@@ -17,6 +17,13 @@
     "typings": "./dist/main.d.ts",
     "types": "./dist/main.d.ts",
     "author": "turtledev1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/turtledev1/typed-math"
+    },
+    "bugs": {
+        "url": "https://github.com/turtledev1/typed-math/issues"
+    },
     "license": "ISC",
     "dependencies": {},
     "devDependencies": {
