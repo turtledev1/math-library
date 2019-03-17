@@ -3,6 +3,12 @@ export class Matrix {
     private _m: number;
     private _data: number[][];
 
+    /**
+     * Represents a matrix
+     * @constructor
+     * @param {number[][]} data an array of array forming the matrix. eg. [ [1, 2], [3, 4] ]
+     * @throws when one row isn't the same size as the others
+     */
     constructor(data: number[][]) {
         if (!this.areAllRowsSameLength(data))
             throw new Error("Rows have to be the same length");
@@ -12,19 +18,32 @@ export class Matrix {
         this._m = data[0].length;
     }
 
+    /**
+     * toString method
+     * @returns returns a string representation of the matrix
+     */
     public toString(): string {
         let str: string = "";
 
-        for (let row of this._data) {
-            for (let num of row) {
-                str += num + " ";
+        for (let i = 0; i < this._n; i++) {
+            for (let j = 0; j < this._m; j++) {
+                str += this._data[i][j];
+                if (j !== this._m - 1)
+                    str += " ";
             }
-            str += "\n";
+            if (i !== this._n - 1)
+                str += "\n";
         }
 
         return str;
     }
 
+    /**
+     * Add another matrix to this one. Matrices must be the same size
+     * @param {Matrix} secondMatrix the matrix to add to the first one
+     * @returns returns the new matrix
+     * @throws when the two matrices are of incompatible size
+     */
     public add(secondMatrix: Matrix) {
         if (this._n !== secondMatrix._n || this._m !== secondMatrix._m)
             throw new Error("Incompatible size for add(). Tried to add " + this._n + "x" + this._m + " and " + secondMatrix._n + "x" + secondMatrix._m + ".");
@@ -41,6 +60,12 @@ export class Matrix {
         return new Matrix(newData);
     }
 
+    /**
+     * Mutiply another matrix to this one. If first matrix is of size n by m, second matrix must be of size m by n.
+     * @param {Matrix} secondMatrix the matrix to multiply to the first one
+     * @returns returns the new matrix
+     * @throws when the two matrices are of incompatible size
+     */
     public multiply(secondMatrix: Matrix) {
         if (this._m !== secondMatrix._n)
             throw new Error("Incompatible size for multiply(). Tried to multiply " + this._n + "x" + this._m + " and " + secondMatrix._n + "x" + secondMatrix._m + ".");
@@ -69,15 +94,59 @@ export class Matrix {
         return true;
     }
 
-    //static methods
+/*--------------------------------------------------------------------------------
+            STATIC METHODS
+--------------------------------------------------------------------------------*/
+
+    /**
+     * Create the identity matrix of size m
+     * @param {number} size the size of the identity matrix
+     * @returns returns the new matrix
+     */
+    public static identity(size: number): Matrix {
+        let data: number[][] = [];
+
+        for (let i = 0; i < size; i++) {
+            data[i] = [];
+
+            for (let j = 0; j < size; j++) {
+                if (i === j)
+                    data[i][j] = 1;
+                else
+                    data[i][j] = 0;
+            }
+        }
+
+        return new Matrix(data);
+    }
+
+    /**
+     * Static alternative to toString
+     * @param {Matrix} matrix the matrix to stringify
+     * @returns returns a string representation of the matrix
+     */
     public static toString(matrix: Matrix): string {
         return matrix.toString();
     }
 
+    /**
+     * Static alternative to add. Matrices must be the same size
+     * @param {Matrix} matrix1 the first matrix
+     * @param {Matrix} matrix2 the matrix to add to the first one
+     * @returns returns the new matrix
+     * @throws when the two matrices are of incompatible size
+     */
     public static add(matrix1: Matrix, matrix2: Matrix): Matrix {
         return matrix1.add(matrix2);
     }
 
+    /**
+     * Static alternative to multiply. If first matrix is of size n by m, second matrix must be of size m by n.
+     * @param {Matrix} matrix1 the first matrix
+     * @param {Matrix} matrix2 the matrix to multiply to the first one
+     * @returns returns the new matrix
+     * @throws when the two matrices are of incompatible size
+     */
     public static multiply(matrix1: Matrix, matrix2: Matrix): Matrix {
         return matrix1.multiply(matrix2);
     }

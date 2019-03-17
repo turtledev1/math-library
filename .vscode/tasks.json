@@ -16,6 +16,12 @@
                 "showReuseMessage": true,
                 "clear": false
             }
+        },
+        {
+            "label": "test",
+            "type": "npm",
+            "script": "test",
+            "problemMatcher": []
         }
     ]
 }
