@@ -1,0 +1,41 @@
+{
+    "name": "typed-math",
+    "version": "1.0.0",
+    "description": "Easy to use typescript math library",
+    "main": "./dist/main.js",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "test": "karma start"
+    },
+    "typescript": {
+        "definition": "./dist/main.d.ts"
+    },
+    "typings": "./dist/main.d.ts",
+    "types": "./dist/main.d.ts",
+    "author": "turtledev1",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/mocha": "^5.2.6",
+        "karma": "^4.0.1",
+        "karma-mocha": "^1.3.0",
+        "karma-phantomjs-launcher": "^1.0.4",
+        "karma-typescript": "^4.0.0",
+        "mocha": "^6.0.2",
+        "typescript": "^3.3.3333"
+    },
+    "keywords": [
+        "math",
+        "mathematics",
+        "maths",
+        "matrix",
+        "matrices",
+        "typescript",
+        "typed",
+        "type"
+    ]
+}
