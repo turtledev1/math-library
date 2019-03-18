@@ -48,16 +48,16 @@ export class Matrix {
         if (this._n !== secondMatrix._n || this._m !== secondMatrix._m)
             throw new Error("Incompatible size for add(). Tried to add " + this._n + "x" + this._m + " and " + secondMatrix._n + "x" + secondMatrix._m + ".");
 
-        let newData: number[][] = [];
+        let data: number[][] = [];
 
         for (let i = 0; i < this._n; i++) {
-            newData[i] = [];
+            data[i] = [];
             for (let j = 0; j < this._m; j++) {
-                newData[i][j] = this._data[i][j] + secondMatrix._data[i][j];
+                data[i][j] = this._data[i][j] + secondMatrix._data[i][j];
             }
         }
 
-        return new Matrix(newData);
+        return new Matrix(data);
     }
 
     /**
@@ -66,23 +66,66 @@ export class Matrix {
      * @returns returns the new matrix
      * @throws when the two matrices are of incompatible size
      */
-    public multiply(secondMatrix: Matrix) {
+    public multiply(secondMatrix: Matrix): Matrix {
         if (this._m !== secondMatrix._n)
             throw new Error("Incompatible size for multiply(). Tried to multiply " + this._n + "x" + this._m + " and " + secondMatrix._n + "x" + secondMatrix._m + ".");
 
-        let newData: number[][] = [];
+        let data: number[][] = [];
 
         for (let i = 0; i < this._n; i++) {
-            newData[i] = [];
+            data[i] = [];
             for (let j = 0; j < secondMatrix._m; j++) {
-                newData[i][j] = 0;
+                data[i][j] = 0;
                 for (let k = 0; k < this._m; k++) {
-                    newData[i][j] += this._data[i][k] * secondMatrix._data[k][j];
+                    data[i][j] += this._data[i][k] * secondMatrix._data[k][j];
                 }
             }
         }
 
-        return new Matrix(newData);
+        return new Matrix(data);
+    }
+
+    /**
+     * Mutiply the matrix by a scalar
+     * @param {number} scalar the scalar to multiply the matrix by
+     * @returns returns the new matrix
+     */
+    public multiplyByScalar(scalar: number): Matrix {
+        let data: number[][] = [];
+
+        for (let i = 0; i < this._n; i++) {
+            data[i] = [];
+            for (let j = 0; j < this._m; j++) {
+                data[i][j] = this._data[i][j] * scalar;
+            }
+        }
+
+        return new Matrix(data);
+    }
+
+    /**
+     * Transpose the matrix
+     * @returns returns the transpose of the matrix
+     */
+    public transpose(): Matrix {
+        let data: number[][] = [];
+
+        for(let j = 0; j < this._m; j++) {
+            data[j] = [];
+            for(let i = 0; i < this._n; i++) {
+                data[j][i] = this._data[i][j];
+            }
+        }
+
+        return new Matrix(data);
+    }
+
+    /**
+     * Check if the matrix is a square matrix
+     * @returns {boolean} returns true if the matrix is a square matrix
+     */
+    public isSquare(): boolean {
+        return this._n === this._m;
     }
 
     private areAllRowsSameLength(data: number[][]): boolean {
@@ -149,5 +192,33 @@ export class Matrix {
      */
     public static multiply(matrix1: Matrix, matrix2: Matrix): Matrix {
         return matrix1.multiply(matrix2);
+    }
+
+    /**
+     * Static alternative to multiplyByScalar
+     * @param {Matrix} matrix the matrix to multiply by the scalar
+     * @param {number} scalar the scalar to multiply the matrix by
+     * @returns returns the new matrix
+     */
+    public static multiplyByScalar(matrix: Matrix, scalar: number): Matrix {
+        return matrix.multiplyByScalar(scalar);
+    }
+
+    /**
+     * Static alternative to transpose
+     * @param {Matrix} matrix the matrix to transpose
+     * @returns returns the transpose of the matrix
+     */
+    public static transpose(matrix: Matrix): Matrix {
+        return matrix.transpose();
+    }
+
+    /**
+     * Static alternative to isSquare
+     * @param {Matrix} matrix the matrix to transpose
+     * @returns {boolean} returns true if the matrix is a square matrix
+     */
+    public static isSquare(matrix: Matrix): boolean {
+        return matrix.isSquare();
     }
 }
