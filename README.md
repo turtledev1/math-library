@@ -20,13 +20,14 @@
 ## Example
 
 ```javascript
-// code away!
+import { Matrix } from "typed-math";
 
 let matrix = new Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
 let matrix2 = new Matrix([[2, 4], [5, 7]]);
 
 console.log(matrix.multiply(matrix2).toString());
 ```
+
 
 
 ## Installation
@@ -36,9 +37,18 @@ npm install typed-math
 ```
 
 
+
 ## Features
 
-Matrices
+- **Completed**
+    - Matrices
+
+- **Work in progess**
+    - Vectors
+
+- **Incoming**
+    - Fractions
+
 
 
 ## FAQ
@@ -47,8 +57,10 @@ Matrices
     - Check if in your tsconfig you have "typeRoots": ["./node_modules"] and "moduleResolution": "node"
 
 
+
 ## Support
 
 Create an issue in this repo mentionning the version of the package.
+
 
 ---
