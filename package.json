@@ -1,6 +1,6 @@
 {
-    "name": "typed-math",
-    "version": "1.0.2",
+    "name": "math-stat",
+    "version": "1.0.0",
     "description": "Easy to use typescript math library",
     "main": "./dist/main.js",
     "files": [
@@ -19,10 +19,10 @@
     "author": "turtledev1",
     "repository": {
         "type": "git",
-        "url": "https://github.com/turtledev1/typed-math"
+        "url": "https://github.com/turtledev1/math-stat"
     },
     "bugs": {
-        "url": "https://github.com/turtledev1/typed-math/issues"
+        "url": "https://github.com/turtledev1/math-stat/issues"
     },
     "license": "ISC",
     "dependencies": {},
@@ -43,6 +43,8 @@
         "maths",
         "matrix",
         "matrices",
+        "vector",
+        "stat",
         "typescript",
         "typed",
         "type"
