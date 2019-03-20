@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { Matrix } from "../src/Matrix";
+import { Matrix } from "../../src/main";
 
 describe("Matrix", function () {
     const SCALAR = 2;
@@ -21,6 +21,16 @@ describe("Matrix", function () {
             }
 
             expect(test).to.throw;
+        });
+    });
+
+    describe("getters", function () {
+        it("should return the correct numbers of rows", function () {
+            expect(MATRIX3_2.n).to.be.equal(3);
+        });
+        
+        it("should return the correct numbers of columns", function () {
+            expect(MATRIX3_2.m).to.be.equal(2);
         });
     });
 

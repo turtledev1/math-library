@@ -19,8 +19,22 @@ export class Matrix {
     }
 
     /**
+     * @returns {number} returns the number of rows in the matrix
+     */
+    public get n(): number {
+        return this._n
+    }
+
+    /**
+     * @returns {number} returns the number of columns in the matrix
+     */
+    public get m(): number {
+        return this._m;
+    }
+
+    /**
      * toString method
-     * @returns returns a string representation of the matrix
+     * @returns {string} returns a string representation of the matrix
      */
     public toString(): string {
         let str: string = "";
@@ -41,7 +55,7 @@ export class Matrix {
     /**
      * Add another matrix to this one. Matrices must be the same size
      * @param {Matrix} secondMatrix the matrix to add to the first one
-     * @returns returns the new matrix
+     * @returns {Matrix} returns the new matrix
      * @throws when the two matrices are of incompatible size
      */
     public add(secondMatrix: Matrix) {
@@ -63,7 +77,7 @@ export class Matrix {
     /**
      * Mutiply another matrix to this one. If first matrix is of size n by m, second matrix must be of size m by n.
      * @param {Matrix} secondMatrix the matrix to multiply to the first one
-     * @returns returns the new matrix
+     * @returns {Matrix} returns the new matrix
      * @throws when the two matrices are of incompatible size
      */
     public multiply(secondMatrix: Matrix): Matrix {
@@ -88,7 +102,7 @@ export class Matrix {
     /**
      * Mutiply the matrix by a scalar
      * @param {number} scalar the scalar to multiply the matrix by
-     * @returns returns the new matrix
+     * @returns {Matrix} returns the new matrix
      */
     public multiplyByScalar(scalar: number): Matrix {
         let data: number[][] = [];
@@ -105,7 +119,7 @@ export class Matrix {
 
     /**
      * Transpose the matrix
-     * @returns returns the transpose of the matrix
+     * @returns {Matrix} returns the transpose of the matrix
      */
     public transpose(): Matrix {
         let data: number[][] = [];
@@ -144,7 +158,7 @@ export class Matrix {
     /**
      * Create the identity matrix of size m
      * @param {number} size the size of the identity matrix
-     * @returns returns the new matrix
+     * @returns {Matrix} returns the new matrix
      */
     public static identity(size: number): Matrix {
         let data: number[][] = [];
@@ -166,7 +180,7 @@ export class Matrix {
     /**
      * Static alternative to toString
      * @param {Matrix} matrix the matrix to stringify
-     * @returns returns a string representation of the matrix
+     * @returns {string} returns a string representation of the matrix
      */
     public static toString(matrix: Matrix): string {
         return matrix.toString();
@@ -176,7 +190,7 @@ export class Matrix {
      * Static alternative to add. Matrices must be the same size
      * @param {Matrix} matrix1 the first matrix
      * @param {Matrix} matrix2 the matrix to add to the first one
-     * @returns returns the new matrix
+     * @returns {Matrix} returns the new matrix
      * @throws when the two matrices are of incompatible size
      */
     public static add(matrix1: Matrix, matrix2: Matrix): Matrix {
@@ -187,7 +201,7 @@ export class Matrix {
      * Static alternative to multiply. If first matrix is of size n by m, second matrix must be of size m by n.
      * @param {Matrix} matrix1 the first matrix
      * @param {Matrix} matrix2 the matrix to multiply to the first one
-     * @returns returns the new matrix
+     * @returns {Matrix} returns the new matrix
      * @throws when the two matrices are of incompatible size
      */
     public static multiply(matrix1: Matrix, matrix2: Matrix): Matrix {
@@ -198,7 +212,7 @@ export class Matrix {
      * Static alternative to multiplyByScalar
      * @param {Matrix} matrix the matrix to multiply by the scalar
      * @param {number} scalar the scalar to multiply the matrix by
-     * @returns returns the new matrix
+     * @returns {Matrix} returns the new matrix
      */
     public static multiplyByScalar(matrix: Matrix, scalar: number): Matrix {
         return matrix.multiplyByScalar(scalar);
@@ -207,7 +221,7 @@ export class Matrix {
     /**
      * Static alternative to transpose
      * @param {Matrix} matrix the matrix to transpose
-     * @returns returns the transpose of the matrix
+     * @returns {Matrix} returns the transpose of the matrix
      */
     public static transpose(matrix: Matrix): Matrix {
         return matrix.transpose();
