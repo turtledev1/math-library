@@ -42,12 +42,14 @@ npm install math-stat
 
 - **Completed**
     - Matrices
+    - Vectors
+    - Fractions
 
 - **Work in progess**
-    - Vectors
+
 
 - **Incoming**
-    - Fractions
+    - Statistic
 
 
 
