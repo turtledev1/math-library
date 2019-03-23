@@ -3,8 +3,8 @@
 > Easy to use typescript math library
 
 ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
-[![Github Issues](https://img.shields.io/github/issues-raw/turtledev1/typed-math.svg)](https://github.com/turtledev1/math-stat/issues)
-[![Pending Pull-Requests](https://img.shields.io/github/issues-pr-raw/turtledev1/typed-math.svg)](https://github.com/turtledev1/math-stat/pulls)
+[![Github Issues](https://img.shields.io/github/issues-raw/turtledev1/math-stat.svg)](https://github.com/turtledev1/math-stat/issues)
+[![Pending Pull-Requests](https://img.shields.io/github/issues-pr-raw/turtledev1/math-stat.svg)](https://github.com/turtledev1/math-stat/pulls)
 
 ## Table of Contents
 
