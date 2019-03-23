@@ -33,7 +33,6 @@ export class Matrix {
     }
 
     /**
-     * toString method
      * @returns {string} returns a string representation of the matrix
      */
     public toString(): string {
@@ -124,9 +123,9 @@ export class Matrix {
     public transpose(): Matrix {
         let data: number[][] = [];
 
-        for(let j = 0; j < this._m; j++) {
+        for (let j = 0; j < this._m; j++) {
             data[j] = [];
-            for(let i = 0; i < this._n; i++) {
+            for (let i = 0; i < this._n; i++) {
                 data[j][i] = this._data[i][j];
             }
         }
@@ -151,9 +150,9 @@ export class Matrix {
         return true;
     }
 
-/*--------------------------------------------------------------------------------
-            STATIC METHODS
---------------------------------------------------------------------------------*/
+    /*--------------------------------------------------------------------------------
+                STATIC METHODS
+    --------------------------------------------------------------------------------*/
 
     /**
      * Create the identity matrix of size m

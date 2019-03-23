@@ -1,6 +1,6 @@
 {
     "name": "math-stat",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Easy to use typescript math library",
     "main": "./dist/main.js",
     "files": [
@@ -39,11 +39,10 @@
     },
     "keywords": [
         "math",
-        "mathematics",
-        "maths",
+        "mathematic",
         "matrix",
-        "matrices",
         "vector",
+        "fraction",
         "stat",
         "typescript",
         "typed",
