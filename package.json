@@ -1,6 +1,6 @@
 {
     "name": "math-stat",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Easy to use typescript math library",
     "main": "./dist/main.js",
     "files": [
@@ -30,12 +30,12 @@
         "@types/chai": "^4.1.7",
         "@types/mocha": "^5.2.6",
         "chai": "^4.2.0",
-        "karma": "^4.0.1",
+        "karma": "^4.2.0",
         "karma-mocha": "^1.3.0",
         "karma-phantomjs-launcher": "^1.0.4",
-        "karma-typescript": "^4.0.0",
-        "mocha": "^6.0.2",
-        "typescript": "^3.3.3333"
+        "karma-typescript": "^4.1.1",
+        "mocha": "^6.1.4",
+        "typescript": "^3.5.3"
     },
     "keywords": [
         "math",
